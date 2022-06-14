@@ -1,0 +1,376 @@
+*{
+	margin: 0;
+  	padding: 0;
+  	text-decoration: none;
+  	box-sizing: border-box;
+  	font-family: 'Noto Sans KR', sans-serif;
+  	scrollbar-width : none;
+}
+body{
+ -ms-overflow-style: none;
+ }
+ 
+::-webkit-scrollbar {
+  display: none;
+}
+
+header{
+	background-color: #FFE15C;
+	height: 64px;
+	display: flex;
+	align-items: center;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	padding: 0 48px;
+
+	transition: all 0.3s ease-in;
+}
+
+header.scrolled{
+	height: 64px;
+	background-color: #f3f4f9;
+}
+
+.menu{
+	flex: 1 0 0; /*둘다 flex-grow:1, 확장되는 성질 부여*/;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.title{
+	font-size: 24px;
+	font-weight: 900;
+	flex: 1 0 0; /*둘다 flex-grow:1, 확장되는 성질 부여*/;
+}
+.title:hover{
+	color: #FFE15C;
+}
+
+.menu a{
+	margin: 0 0 0 36px;
+	color: #0a0a0a;
+}
+
+.menu a:hover{
+	color: #FFE15C;
+}
+
+.hero{
+	width: 100%;
+	height: 100vh;
+	background-color: #FFE15C;
+	z-index: 0;
+	display: flex;
+
+	flex-direction: column;
+	justify-content: center;
+	animation-fill-mode: forwards;
+}
+.hero h2{
+	padding-top: 64px;
+  	font-size: 48px;
+ 	line-height: 1.25;
+  	font-weight: 700;
+  	margin-left: 116px;
+}
+.hero p{
+	margin: 1.5em 0;
+  	font-size: 16px;
+  	line-height: 1.5;
+  	color: #0a0a0a;
+  	margin-left: 116px;
+  	padding-top : 20px;
+}
+.hero a{
+	margin-top : 20px;
+	margin-left: 116px;
+	width: 200px;
+  	padding: 0.6em 4.5em;
+  	background-color: #rgba(0, 0, 0, 0);
+  	border: 0.4px solid #0a0a0a;
+  	color: #0a0a0a;
+  	text-align: center;
+}
+
+.hero a{
+	cursor: pointer;
+	display: inline-block;
+	color: #0a0a0a;
+	transition: color 0.4s linear;
+	position: relative;
+}
+.button:hover{
+	color: #f3f4f9;
+}
+.button::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top : 0%;
+	width: 100%;
+	height: 100%;
+	background : #000;
+	z-index: -1;
+	transition: transform 0.5s;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+
+	transform: scaleX(0);
+	color: #f3f4f9;
+}
+.button:hover::before{
+	transform: scaleX(1);
+}
+.intro{
+	width: 100%;
+	height: 100vh;
+	background-color: #F3f4f9;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+}
+.one{
+	width: 300px;
+	height: 300px;
+	border-radius: 8px;
+	background-color: #fff;
+}
+.two{
+	width: 300px;
+	height: 300px;
+	border-radius: 8px;
+	background-color: #fff;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+.three{
+	width: 300px;
+	height: 300px;
+	border-radius: 8px;
+	background-color: #fff;
+}
+
+.content{
+	width: 100%;
+	height: 100vh;
+ 	display: flex;
+ 	flex-direction: row;
+ 	background-color: #f3f4f9;
+	/*align-items: center;*/
+	/*justify-content: center;*/
+}
+
+.info{
+	width: 50%;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	/*justify-content: center;*/
+	padding-left: 120px;
+}
+
+.content:nth-child(2n){
+	flex-direction: row-reverse;
+}
+
+h3{
+  	font-size: 24px;
+  	line-height: 1.4;
+  	font-weight: 700;
+}
+p{
+  	margin: 1.5em 0;
+  	font-size: 14px;
+  	line-height: 1.5;
+  	color: #0a0a0a;
+}
+.image{
+	width : 50%;
+	height: 100vh;
+	background-color: #f3f4f9;
+	display: flex;
+ 	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.sq{
+	width : 60%;
+	height : 60%;
+	border-radius: 8px;
+}
+.sq{
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+	transform: scale(1.0);
+	transition: all 0.2s linear;
+}
+.first > img{
+	object-fit: cover;
+	width: 100%;
+}
+.second > img{
+	object-fit: cover;
+	height: 100%;
+}
+.third > img{
+	object-fit: cover;
+	height: 100%;
+}
+.sq img:hover{
+	transform: scale(1.1);
+	transition: all 0.2s linear;
+}
+
+.mok{
+
+}
+.mok a{
+	display: inline-block;
+  	padding: 0.5em 4.5em;
+  	background-color: #f3f4f9;
+  	color: #f3f4f9;
+
+ 	background-color: #rgba(0, 0, 0, 0);
+  	border: 0.4px solid #0a0a0a;
+  	color: #0a0a0a;
+  	text-align: center;
+
+  	cursor: pointer;
+	color: #0a0a0a;
+	transition: color 0.4s linear;
+	position: relative;
+}
+.blog{
+	width: 100%;
+	height: 100vh;
+	background-image: url(ball.jpg);
+	overflow: hidden;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.blog h2{
+	font-size: 48px;
+	color: #f3f4f9;
+	text-align: center;
+	padding-top : 360px;
+}
+.sns{
+	z-index: 1;
+	margin-top: 60px;
+	width: 100%;
+	height: 140px;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.dribble{
+	border-radius: 500px;
+	background-color: #F3F4F9;
+	width: 104px;
+	height: 104px;
+}
+.sns > div:hover{
+	background-color: gold;
+	transition: all 0.75s;
+}
+.dribble img{
+	width: 44px;
+	height: 44px;
+	margin-top : 30px;
+	margin-left: 30px;
+}
+.instar{
+	border-radius: 500px;
+	background-color: #F3F4F9;
+	width: 104px;
+	height: 104px;
+	margin-left: 52px;
+	margin-right: 52px;
+}
+.instar img{
+	width: 44px;
+	height: 44px;
+	margin-top : 30px;
+	margin-left: 30px;
+}
+.facebok{
+	border-radius: 500px;
+	background-color: #F3F4F9;
+	width: 104px;
+	height: 104px;
+}
+.facebok img{
+	width: 44px;
+	height: 44px;
+	margin-top : 30px;
+	margin-left: 30px;
+}
+.footer{
+	width: 100%;
+	height: 65px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	background-color: #f3f4f9;
+}
+.circle{
+	width: 95px;
+	height: 95px;
+	margin-top: -65px;
+
+	border-radius: 120px;
+	background-color: #f3f4f9;
+	position: absolute;
+}
+.final{
+	display: block;
+	margin: 0 auto;
+	justify-content: center;
+	padding-top: 12px;
+
+}
+.footer > h5{
+	font-size: 14px;
+	font-weight: 400;
+	z-index: 1;
+}
+.hand{
+	height: 100vh;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.one{
+	background-image: url(https://i.postimg.cc/MTkGy5b9/product1.png);
+	overflow: hidden;
+	background-size: cover;
+}
+.two{
+	background-image: url(https://i.postimg.cc/0QxskBC1/web1.png);
+	overflow: hidden;
+	background-size: cover;
+}
+.three{
+	background-image: url(https://i.postimg.cc/zXMYbBkj/final1.png);
+	overflow: hidden;
+	background-size: cover;
+}
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
